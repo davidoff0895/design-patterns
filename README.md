@@ -1,1 +1,3 @@
-# design-patterns
+# GRASP&GOF patterns
+
+- Factory method
