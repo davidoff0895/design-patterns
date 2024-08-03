@@ -1,7 +1,7 @@
 abstract class CoreElement {
     protected i: number = 0;
-    public increment () {}
-    public decrement () {}
+    abstract increment(): void
+    abstract decrement(): void
 }
 class LeafElement extends CoreElement {
     public increment () {
