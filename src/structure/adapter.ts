@@ -12,7 +12,7 @@ class Adapter implements SpanishLibrary {
 }
 class EspanolBiblioteca {
     public darInformacion () {
-        return `Volvo alguna informacion`;
+        return `Vuelvo alguna informacion`;
     }
 }
 
