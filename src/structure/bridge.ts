@@ -1,16 +1,16 @@
-interface Purpose {
+interface IPurpose {
     getPurpose(): string;
 }
-interface SiteProperty {
+interface ISite {
     type: string,
     purpose: string,
 }
-class B2B implements Purpose {
+class B2B implements IPurpose {
     getPurpose() {
         return 'business';
     }
 }
-class B2C implements Purpose {
+class B2C implements IPurpose {
     getPurpose() {
         return 'customer';
     }
@@ -21,21 +21,21 @@ abstract class Site {
         type: '',
         purpose: '',
     };
-    protected constructor(protected purpose: Purpose) {
+    protected constructor(protected purpose: IPurpose) {
         this.siteProperties.purpose = this.purpose.getPurpose();
     }
     public getSite(): SiteProperty {
         return this.siteProperties;
     }
 }
-class Blog extends Site {
-    constructor(purpose: Purpose) {
+class Blog extends ISite {
+    constructor(purpose: IPurpose) {
         super(purpose);
         this.siteProperties.type = 'BLOG';
     }
 }
-class Shop extends Site {
-    constructor(purpose: Purpose) {
+class Shop extends ISite {
+    constructor(purpose: IPurpose) {
         super(purpose);
         this.siteProperties.type = 'SHOP';
     }
