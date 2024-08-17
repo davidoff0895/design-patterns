@@ -1,6 +1,11 @@
 abstract class Editor {
-    protected content: string;
+    protected content: string = '';
     protected isEditMode: boolean = false;
+    public updateFile (): void {
+        this.open();
+        this.edit();
+        this.close();
+    }
     public open(): void {
         this.isEditMode = true;
     };
@@ -35,9 +40,5 @@ class EditTime extends Editor {
 }
 const editDate = new EditDate();
 const editTime = new EditTime();
-editDate.open();
-editDate.edit();
-editDate.close();
-editTime.open();
-editTime.edit();
-editTime.close();
+editDate.updateFile();
+editTime.updateFile();
